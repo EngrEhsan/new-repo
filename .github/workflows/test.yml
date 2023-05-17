@@ -1,14 +1,15 @@
-run_tests:
-  image: ubuntu:latest
-  before_script:
-    - apt-get update && apt-get install -y build-essential
-    - apt-get install -y cmake make
+name: CmakeTest
+on:
+  push:
+    branches: main 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: apt-get update && apt-get install -y build-essential
+    - run: apt-get install -y cmake make
     
-  script:
-    - mkdir build && cd build
-    - cmake ../
-    - make
-
-  artifacts:
-    paths:
-      - build/main
+    - run: mkdir build && cd build
+    - run: cmake ../
+    - run: make
+    - run: build/main
