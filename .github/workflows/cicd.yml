@@ -1,5 +1,4 @@
 name: Build & store PLSW reference image and sdk
-
 on:
   workflow_call:
     inputs:
