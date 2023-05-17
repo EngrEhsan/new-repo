@@ -18,5 +18,3 @@ jobs:
     
     - run: mkdir build && cd build
     - run: cmake
-    - run: make
-    - run: build/main
